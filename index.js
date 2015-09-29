@@ -17,8 +17,9 @@ var amq = require('amq'),
 
 // connect to AMQP
 var mqcon = amq.createConnection(
-  { host: 'localhost', debug: true },
-  { reconnect : { strategy : 'constant' , initial : 1000 } }
+  amqp_url,
+  { debug: true,
+    reconnect : { strategy : 'constant' , initial : 1000 } }
 );
 
 // attach connection manager to HTTP server instance
